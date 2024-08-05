@@ -1,0 +1,82 @@
+.main {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 40px 40px 20px 20px;
+}
+  
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    margin: 0 10px 0 20px;
+    font-size: 32px;
+    color: #424141;
+}
+
+.add-task-button {
+    margin-top: 0;
+    background-color: #F4512C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+  
+.add-task-button:hover {
+    background-color: #D43F1F;
+}
+
+.task-container {
+    margin-left: 20px;
+    height: 70%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.task-actions {
+    margin: 20px 0 0 0;
+    position: absolute;
+    right: 40px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000; 
+}
+  
+.done-all-button,
+.delete-all-button {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.done-all-button {
+    background-color: #F4512C;
+}
+
+.delete-all-button {
+    background-color: #5E1B89;
+}
+  
+.done-all-button:hover {
+    background-color: #D43F1F;
+}
+
+.delete-all-button:hover {
+    background-color: #3d125a;
+}

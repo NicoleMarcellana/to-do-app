@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    z-index: 1000;
+    border-bottom: 1px solid black;
+    background: linear-gradient(to right, #F4512C, #5E1B89);
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+  
+.appName {
+    margin-top: 25px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+} 

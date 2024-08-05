@@ -1,0 +1,63 @@
+.task-details-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+  
+.task-details-modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+  
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+  
+.task-title1 {
+  font-size: 20px;
+  margin: 10px 0 0 0;
+  font-weight: bold;
+  color:rgb(37, 37, 37);
+}
+
+.task-details1 {
+  margin: 10px 0 30px 0;
+  font-size: 14px;
+  color: rgb(101, 100, 100);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  font-family: 'Lato';
+}
+
+.task-date1 {
+  font-size: 10px;
+  color: gray;
+  margin: 0 0 0 0;
+  font-family: 'Lato';
+}
+
+.due {
+  font-size: 12px;
+  color: gray;
+  margin: 0 0 0 0;
+}

@@ -1,0 +1,85 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+}
+
+.modal .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0 0 0;
+  }
+  
+.modal h2 {
+    margin-top: 0;
+}
+  
+.modal label {
+    display: block;
+    margin: 10px 0;
+}
+  
+.modal input,
+.modal textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+  
+.modal input[type="text"] {
+    height: 40px;
+}
+  
+.modal textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+.modal button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.modal button:first-of-type:hover {
+    background-color: #D43F1F;
+}
+
+.modal button:last-of-type:hover {
+    background-color: #3d125a;
+}
+  
+.modal button:first-of-type {
+    background-color: #F4512C;
+    color: white;
+}
+  
+.modal button:last-of-type {
+    background-color: #5E1B89;
+    color: white;
+    margin-right: 0;
+}
+
+.error-message {
+    margin: 0 0 0 0;
+    color: rgba(255, 0, 0, 0.721);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+} 

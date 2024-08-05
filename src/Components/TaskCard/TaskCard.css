@@ -1,0 +1,118 @@
+.task-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 200px;
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    margin: 5px 15px 10px 15px;
+}
+
+.sideNav.collapsed ~ .main .task-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 200px;
+    width: 100%;
+    max-width: 240px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    margin: 5px 10px 10px 5px;
+}
+
+
+.task-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.task-details,
+.task-date {
+    font-family: 'Lato', sans-serif;
+}
+
+.task-title {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+    color: rgb(49, 48, 48);
+}
+
+.task-details {
+    margin: 10px 0;
+    font-size: 14px;
+    color: rgb(101, 100, 100);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.task-date {
+    font-size: 11px;
+    color: gray;
+    position: absolute;
+    bottom: 20px; 
+    left: 15px;
+}
+
+.task-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.task-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: gray;
+}
+
+.task-buttons .complete-button:hover {
+    color: #F4512C;
+}
+
+.task-buttons .edit-button:hover {
+    color: #9D71BC;
+}
+
+.task-buttons .delete-button:hover {
+    color: #5E1B89;
+}
+
+.completed .task-title,
+.completed .task-details,
+.completed .task-date,
+.completed .task-due{
+    text-decoration: line-through;
+    color: #999;
+}
+
+.task-due {
+    font-size: 13px;
+    color: gray;
+    position: absolute;
+    bottom: 55px; 
+    left: 15px;
+    font-family: 'Lato';
+    font-weight: bold;
+}
