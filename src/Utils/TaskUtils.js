@@ -1,3 +1,4 @@
+import { formatDate } from './DateUtils';
 
 export const filterTasks = (tasks, filter) => {
   const now = new Date();
@@ -22,8 +23,8 @@ export const createNewTask = (title, description, dueDate, dueTime) => ({
   id: Date.now(),
   title,
   description,
-  date: new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }),
+  date: formatDate(new Date()),
   completed: false,
-  dueDate,
-  dueTime
+  dueDate: dueDate ? formatDate(dueDate) : null,
+  dueTime: dueTime || null
 });

@@ -59,7 +59,7 @@ const App = () => {
     setEditingTask(null);
   };
 
-  const titleError = !taskTitle.trim() && isTouched ? 'Task title is required' : '';
+  const titleError = !taskTitle.trim() && isTouched ? 'Task title is required.' : '';
 
   return (
     <div className="App">

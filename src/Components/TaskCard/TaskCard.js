@@ -1,7 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faEdit, faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar, faCheck, faClock, faEdit, faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
 import './TaskCard.css';
+import { formatDate, formatTime } from '../../Utils/DateUtils';
 
 function TaskCard({ task, onComplete, onEdit, onDelete, onClick }) {
   return (
@@ -9,13 +10,19 @@ function TaskCard({ task, onComplete, onEdit, onDelete, onClick }) {
       <div className="task-title">{task.title}</div>
       <div className="task-details">{task.description}</div>
       <div className="task-date-time">
-      <div className="task-date">{task.date}</div>
-        {task.dueDate && (
+        <div className="task-date">{formatDate(task.date)}</div>
           <div className="task-due">
-            Due: {new Date(task.dueDate).toLocaleDateString()}
-            {task.dueTime ? `, ${task.dueTime}` : ''}
+          {task.dueDate && 
+              <div className="date">
+                <FontAwesomeIcon icon={faCalendar} /> 
+                {formatDate(task.dueDate)}
+              </div>}
+            {task.dueTime && 
+              <div className="time">
+                <FontAwesomeIcon icon={faClock} /> 
+                {formatTime(task.dueTime)}
+              </div>}
           </div>
-        )}
       </div>
       <div className="task-buttons">
         <button className="complete-button" onClick={(e) => { e.stopPropagation(); onComplete(task); }}>
