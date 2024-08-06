@@ -85,3 +85,10 @@
     font-size: 0.875rem;
     margin-top: 0.25rem;
 } 
+
+input[type="text"],
+textarea,
+input[type="date"],
+input[type="time"] {
+    color:#494849;
+}
