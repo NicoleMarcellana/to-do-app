@@ -11,9 +11,9 @@ export const filterTasks = (tasks, filter) => {
     case 'completed':
       return tasks.filter(task => task.completed);
     case 'late':
-      return tasks.filter(task => task.completed && new Date(task.dueDate) < now);
+      return tasks.filter(task => task.completed && task.dueDate && new Date(task.dueDate) < now);
     case 'missing':
-      return tasks.filter(task => !task.completed && new Date(task.dueDate) <= now);
+      return tasks.filter(task => !task.completed && task.dueDate && new Date(task.dueDate) <= now);
     default:
       return tasks;
   }
