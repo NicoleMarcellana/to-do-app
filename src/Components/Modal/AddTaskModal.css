@@ -92,6 +92,7 @@ input[type="date"],
 input[type="time"] {
     color:#494849;
     border: 1px solid #5E1B89;
+    font-family: 'Poppins';
 }
 
 input[type="text"]:focus,

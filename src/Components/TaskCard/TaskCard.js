@@ -8,15 +8,10 @@ function TaskCard({ task, onComplete, onEdit, onDelete, onClick }) {
   const now = new Date();
 
   const getTaskDueDateTime = () => {
-    if (task.dueDate) {
-      const dueDate = new Date(task.dueDate);
-      if (task.dueTime) {
-        const [hours, minutes] = task.dueTime.split(':').map(Number);
-        dueDate.setHours(hours, minutes);
-      }
-      return dueDate;
-    }
-    return null;
+    const date = task.dueDate || new Date().toISOString().split('T')[0]; // Default to current date if no due date
+    const time = task.dueTime || '23:59'; // Default to 11:59 PM if no due time
+    const dueDateTime = new Date(`${date}T${time}:00`);
+    return dueDateTime;
   };
 
   const getStatusClass = () => {

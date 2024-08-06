@@ -1,7 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './AddTaskModal.css';
 
-function AddTaskModal({ isOpen, onClose, onSave, taskTitle, setTaskTitle, taskDescription, setTaskDescription, dueDate, setDueDate, dueTime, setDueTime, mode }) {
+function AddTaskModal({
+  isOpen,
+  onClose,
+  onSave,
+  taskTitle,
+  setTaskTitle,
+  taskDescription,
+  setTaskDescription,
+  dueDate,
+  setDueDate,
+  dueTime,
+  setDueTime,
+  mode
+}) {
   const [isTouched, setIsTouched] = useState(false);
 
   useEffect(() => {
@@ -17,7 +30,11 @@ function AddTaskModal({ isOpen, onClose, onSave, taskTitle, setTaskTitle, taskDe
   const handleSaveClick = () => {
     setIsTouched(true);
     if (taskTitle.trim()) {
-      onSave(taskTitle, taskDescription, dueDate, dueTime);
+      // Set default time to 11:59 PM if no time is provided
+      const time = dueTime || '23:59';
+      // Set default date to current date if no date is provided
+      const date = dueDate || new Date().toISOString().split('T')[0];
+      onSave(taskTitle, taskDescription, date, time);
       resetFields();
     }
   };

@@ -107,9 +107,10 @@
 .completed .task-title,
 .completed .task-details,
 .completed .task-date,
-.completed .task-due{
-    text-decoration: line-through;
-    color: #999;
+.completed .task-due,
+.completed .task-due svg {
+  text-decoration: line-through;
+  color: #999;
 }
 
 .task-due {
@@ -165,4 +166,8 @@
     text-align: center;
     background-color: #FF7F4D;
     color: white;
+}
+
+button {
+    font-family: 'Poppins';
 }
