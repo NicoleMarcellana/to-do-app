@@ -33,7 +33,7 @@
   
 .task-title1 {
   font-size: 20px;
-  margin: 10px 0 0 0;
+  margin: 3px 0 0 0;
   font-weight: bold;
   color:#5E1B89;
 }
@@ -70,4 +70,12 @@
 
 .date {
   margin-bottom: 3px;
+}
+
+.completed .task-title1,
+.completed .task-details1,
+.completed .task-date1,
+.completed .due{
+    text-decoration: line-through;
+    color: #999;
 }

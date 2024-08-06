@@ -19,12 +19,15 @@ export const filterTasks = (tasks, filter) => {
   }
 };
 
-export const createNewTask = (title, description, dueDate, dueTime) => ({
-  id: Date.now(),
-  title,
-  description,
-  date: formatDate(new Date()),
-  completed: false,
-  dueDate: dueDate ? formatDate(dueDate) : null,
-  dueTime: dueTime || null
-});
+export const createNewTask = (title, description, dueDate, dueTime) => {
+  const creationDate = new Date();
+  return {
+    id: Date.now(),
+    title,
+    description,
+    date: formatDate(creationDate),
+    completed: false,
+    dueDate: dueDate ? formatDate(dueDate) : (dueTime ? formatDate(creationDate) : null),
+    dueTime: dueTime || null
+  };
+};

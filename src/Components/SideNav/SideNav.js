@@ -13,7 +13,6 @@ function SideNav({ filter, setFilter }) {
   return (
     <div className={`sideNav ${isCollapsed ? 'collapsed' : ''}`}>
       <a
-        href="#menu"
         className="menuToggle"
         onClick={toggleNav}
       >
