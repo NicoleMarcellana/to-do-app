@@ -22,7 +22,7 @@
 .modal .button-container {
     display: flex;
     justify-content: flex-end;
-    margin: 10px 0 0 0;
+    margin: 20px 0 0 0;
   }
   
 .modal h2 {
@@ -91,4 +91,13 @@ textarea,
 input[type="date"],
 input[type="time"] {
     color:#494849;
+    border: 1px solid #5E1B89;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+input[type="date"]:focus,
+input[type="time"]:focus {
+  outline: none;
+  box-shadow:0 0 5px #3d125a;
 }

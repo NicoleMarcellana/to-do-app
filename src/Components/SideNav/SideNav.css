@@ -2,7 +2,7 @@
   height: 97%;
   width: 230px;
   padding-top: 20px;
-  border-right: 1px solid black;
+  border-right: 1px solid #5f1b8985;
   background-color: white;
   transition: width 0.3s;
 }
