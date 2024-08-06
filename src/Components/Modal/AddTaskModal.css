@@ -26,10 +26,12 @@
   }
   
 .modal h2 {
+    color:#5E1B89;
     margin-top: 0;
 }
   
 .modal label {
+    color:#504e52;
     display: block;
     margin: 10px 0;
 }

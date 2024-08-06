@@ -22,10 +22,12 @@
   
 .confirm-delete-modal h2 {
   margin-top: 0;
+  color:#5E1B89;
 }
 
 .confirm-delete-modal p {
   font-size: 16px;
+  color:#504e52;
 }
 
 .confirm-delete-modal .subheading {
