@@ -21,7 +21,7 @@ export const filterTasks = (tasks, filter) => {
 
 export const createNewTask = (title, description, dueDate, dueTime) => {
   const now = new Date();
-  const defaultDueDate = dueDate || now.toISOString().split('T')[0]; // Default to today's date if no due date
+  const defaultDueDate = dueTime ? now.toISOString().split('T')[0] : dueDate;
   return {
     id: Date.now(),
     title,
