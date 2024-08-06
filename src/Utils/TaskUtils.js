@@ -1,7 +1,17 @@
-import { formatDate } from './DateUtils';
-
 export const filterTasks = (tasks, filter) => {
   const now = new Date();
+
+  const getTaskDueDateTime = (task) => {
+    if (task.dueDate) {
+      const dueDate = new Date(task.dueDate);
+      if (task.dueTime) {
+        const [hours, minutes] = task.dueTime.split(':').map(Number);
+        dueDate.setHours(hours, minutes);
+      }
+      return dueDate;
+    }
+    return null;
+  };
 
   switch (filter) {
     case 'all':
@@ -11,9 +21,17 @@ export const filterTasks = (tasks, filter) => {
     case 'completed':
       return tasks.filter(task => task.completed);
     case 'late':
-      return tasks.filter(task => task.completed && task.dueDate && new Date(task.dueDate) < now);
+      return tasks.filter(task => 
+        task.completed && 
+        getTaskDueDateTime(task) && 
+        getTaskDueDateTime(task) < now
+      );
     case 'missing':
-      return tasks.filter(task => !task.completed && task.dueDate && new Date(task.dueDate) <= now);
+      return tasks.filter(task => 
+        !task.completed &&
+        getTaskDueDateTime(task) && 
+        getTaskDueDateTime(task) <= now
+      );
     default:
       return tasks;
   }
