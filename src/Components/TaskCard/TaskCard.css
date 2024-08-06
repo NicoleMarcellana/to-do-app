@@ -65,6 +65,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    font-family: 'Montserrat';
 }
 
 .task-date {
@@ -73,6 +74,7 @@
     position: absolute;
     bottom: 17px; 
     left: 15px;
+    font-family: 'Montserrat';
 }
 
 .task-buttons {
@@ -118,7 +120,7 @@
     color: gray;
     position: absolute;
     bottom: 45px;
-    font-family: 'Lato';
+    font-family: 'Montserrat';
 }
 
 .task-due div svg {

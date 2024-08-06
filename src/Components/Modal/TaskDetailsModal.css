@@ -46,21 +46,21 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  font-family: 'Lato';
+  font-family: 'Montserrat';
 }
 
 .task-date1 {
   font-size: 11px;
   color: gray;
   margin: 0 0 0 0;
-  font-family: 'Lato';
+  font-family: 'Montserrat';
 }
 
 .due {
   font-size: 12px;
   color: gray;
   margin: 0 0 20px 0;
-  font-family: 'Lato';
+  font-family: 'Montserrat';
 }
 
 .due div svg {
