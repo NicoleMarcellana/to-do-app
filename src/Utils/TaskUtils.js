@@ -20,14 +20,15 @@ export const filterTasks = (tasks, filter) => {
 };
 
 export const createNewTask = (title, description, dueDate, dueTime) => {
-  const creationDate = new Date();
+  const now = new Date();
+  const defaultDueDate = dueDate || now.toISOString().split('T')[0]; // Default to today's date if no due date
   return {
     id: Date.now(),
     title,
     description,
-    date: formatDate(creationDate),
+    date: new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }),
     completed: false,
-    dueDate: dueDate ? formatDate(dueDate) : (dueTime ? formatDate(creationDate) : null),
-    dueTime: dueTime || null
+    dueDate: defaultDueDate,
+    dueTime
   };
 };

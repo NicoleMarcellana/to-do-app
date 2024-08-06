@@ -7,17 +7,37 @@ import { formatDate, formatTime } from '../../Utils/DateUtils';
 function TaskDetailsModal({ task, isOpen, onClose }) {
   const now = new Date();
 
+  const getTaskDueDateTime = () => {
+    if (task.dueDate) {
+      const dueDate = new Date(task.dueDate);
+      if (task.dueTime) {
+        const [hours, minutes] = task.dueTime.split(':').map(Number);
+        dueDate.setHours(hours, minutes);
+      }
+      return dueDate;
+    }
+    return null;
+  };
+
   const getStatusClass = () => {
-    if (task.completed && task.dueDate && new Date(task.dueDate) < now) return 'status-late';
-    if (task.completed) return 'status-completed';
-    if (!task.completed && task.dueDate && new Date(task.dueDate) <= now) return 'status-missing';
+    const dueDateTime = getTaskDueDateTime();
+    if (task.completed) {
+      return dueDateTime && dueDateTime < now ? 'status-late' : 'status-completed';
+    }
+    if (dueDateTime && dueDateTime < now) {
+      return 'status-missing';
+    }
     return 'status-pending';
   };
 
   const getStatusText = () => {
-    if (task.completed && task.dueDate && new Date(task.dueDate) < now) return 'Late';
-    if (task.completed) return 'Completed';
-    if (!task.completed && task.dueDate && new Date(task.dueDate) <= now) return 'Missing';
+    const dueDateTime = getTaskDueDateTime();
+    if (task.completed) {
+      return dueDateTime && dueDateTime < now ? 'Late' : 'Completed';
+    }
+    if (dueDateTime && dueDateTime < now) {
+      return 'Missing';
+    }
     return 'Pending';
   };
 
